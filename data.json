@@ -1,0 +1,2156 @@
+[
+{
+  "model": "admin.logentry",
+  "pk": 1,
+  "fields": {
+    "action_time": "2024-12-02T16:36:39.010Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "1",
+    "object_repr": "Ticket object (1)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2,
+  "fields": {
+    "action_time": "2024-12-02T17:23:41.512Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "2",
+    "object_repr": "staff (Contact)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 3,
+  "fields": {
+    "action_time": "2024-12-02T18:38:41.839Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "2",
+    "object_repr": "staff (Contact)",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Email\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 4,
+  "fields": {
+    "action_time": "2024-12-04T04:25:33.299Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "1",
+    "object_repr": "Contact: staff",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 1,
+  "fields": {
+    "name": "Can add log entry",
+    "content_type": 1,
+    "codename": "add_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 2,
+  "fields": {
+    "name": "Can change log entry",
+    "content_type": 1,
+    "codename": "change_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 3,
+  "fields": {
+    "name": "Can delete log entry",
+    "content_type": 1,
+    "codename": "delete_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 4,
+  "fields": {
+    "name": "Can view log entry",
+    "content_type": 1,
+    "codename": "view_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 5,
+  "fields": {
+    "name": "Can add permission",
+    "content_type": 2,
+    "codename": "add_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 6,
+  "fields": {
+    "name": "Can change permission",
+    "content_type": 2,
+    "codename": "change_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 7,
+  "fields": {
+    "name": "Can delete permission",
+    "content_type": 2,
+    "codename": "delete_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 8,
+  "fields": {
+    "name": "Can view permission",
+    "content_type": 2,
+    "codename": "view_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 9,
+  "fields": {
+    "name": "Can add group",
+    "content_type": 3,
+    "codename": "add_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 10,
+  "fields": {
+    "name": "Can change group",
+    "content_type": 3,
+    "codename": "change_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 11,
+  "fields": {
+    "name": "Can delete group",
+    "content_type": 3,
+    "codename": "delete_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 12,
+  "fields": {
+    "name": "Can view group",
+    "content_type": 3,
+    "codename": "view_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 13,
+  "fields": {
+    "name": "Can add content type",
+    "content_type": 4,
+    "codename": "add_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 14,
+  "fields": {
+    "name": "Can change content type",
+    "content_type": 4,
+    "codename": "change_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 15,
+  "fields": {
+    "name": "Can delete content type",
+    "content_type": 4,
+    "codename": "delete_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 16,
+  "fields": {
+    "name": "Can view content type",
+    "content_type": 4,
+    "codename": "view_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 17,
+  "fields": {
+    "name": "Can add session",
+    "content_type": 5,
+    "codename": "add_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 18,
+  "fields": {
+    "name": "Can change session",
+    "content_type": 5,
+    "codename": "change_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 19,
+  "fields": {
+    "name": "Can delete session",
+    "content_type": 5,
+    "codename": "delete_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 20,
+  "fields": {
+    "name": "Can view session",
+    "content_type": 5,
+    "codename": "view_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 21,
+  "fields": {
+    "name": "Can add product",
+    "content_type": 6,
+    "codename": "add_product"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 22,
+  "fields": {
+    "name": "Can change product",
+    "content_type": 6,
+    "codename": "change_product"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 23,
+  "fields": {
+    "name": "Can delete product",
+    "content_type": 6,
+    "codename": "delete_product"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 24,
+  "fields": {
+    "name": "Can view product",
+    "content_type": 6,
+    "codename": "view_product"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 25,
+  "fields": {
+    "name": "Can add user",
+    "content_type": 7,
+    "codename": "add_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 26,
+  "fields": {
+    "name": "Can change user",
+    "content_type": 7,
+    "codename": "change_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 27,
+  "fields": {
+    "name": "Can delete user",
+    "content_type": 7,
+    "codename": "delete_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 28,
+  "fields": {
+    "name": "Can view user",
+    "content_type": 7,
+    "codename": "view_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 29,
+  "fields": {
+    "name": "Can add contact",
+    "content_type": 8,
+    "codename": "add_contact"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 30,
+  "fields": {
+    "name": "Can change contact",
+    "content_type": 8,
+    "codename": "change_contact"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 31,
+  "fields": {
+    "name": "Can delete contact",
+    "content_type": 8,
+    "codename": "delete_contact"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 32,
+  "fields": {
+    "name": "Can view contact",
+    "content_type": 8,
+    "codename": "view_contact"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 33,
+  "fields": {
+    "name": "Can add staff",
+    "content_type": 9,
+    "codename": "add_staff"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 34,
+  "fields": {
+    "name": "Can change staff",
+    "content_type": 9,
+    "codename": "change_staff"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 35,
+  "fields": {
+    "name": "Can delete staff",
+    "content_type": 9,
+    "codename": "delete_staff"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 36,
+  "fields": {
+    "name": "Can view staff",
+    "content_type": 9,
+    "codename": "view_staff"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 37,
+  "fields": {
+    "name": "Can add order",
+    "content_type": 10,
+    "codename": "add_order"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 38,
+  "fields": {
+    "name": "Can change order",
+    "content_type": 10,
+    "codename": "change_order"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 39,
+  "fields": {
+    "name": "Can delete order",
+    "content_type": 10,
+    "codename": "delete_order"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 40,
+  "fields": {
+    "name": "Can view order",
+    "content_type": 10,
+    "codename": "view_order"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 41,
+  "fields": {
+    "name": "Can add ticket",
+    "content_type": 11,
+    "codename": "add_ticket"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 42,
+  "fields": {
+    "name": "Can change ticket",
+    "content_type": 11,
+    "codename": "change_ticket"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 43,
+  "fields": {
+    "name": "Can delete ticket",
+    "content_type": 11,
+    "codename": "delete_ticket"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 44,
+  "fields": {
+    "name": "Can view ticket",
+    "content_type": 11,
+    "codename": "view_ticket"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 45,
+  "fields": {
+    "name": "Can add order detail",
+    "content_type": 12,
+    "codename": "add_orderdetail"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 46,
+  "fields": {
+    "name": "Can change order detail",
+    "content_type": 12,
+    "codename": "change_orderdetail"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 47,
+  "fields": {
+    "name": "Can delete order detail",
+    "content_type": 12,
+    "codename": "delete_orderdetail"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 48,
+  "fields": {
+    "name": "Can view order detail",
+    "content_type": 12,
+    "codename": "view_orderdetail"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 49,
+  "fields": {
+    "name": "Can add campaign",
+    "content_type": 13,
+    "codename": "add_campaign"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 50,
+  "fields": {
+    "name": "Can change campaign",
+    "content_type": 13,
+    "codename": "change_campaign"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 51,
+  "fields": {
+    "name": "Can delete campaign",
+    "content_type": 13,
+    "codename": "delete_campaign"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 52,
+  "fields": {
+    "name": "Can view campaign",
+    "content_type": 13,
+    "codename": "view_campaign"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 53,
+  "fields": {
+    "name": "Can add mail track",
+    "content_type": 14,
+    "codename": "add_mailtrack"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 54,
+  "fields": {
+    "name": "Can change mail track",
+    "content_type": 14,
+    "codename": "change_mailtrack"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 55,
+  "fields": {
+    "name": "Can delete mail track",
+    "content_type": 14,
+    "codename": "delete_mailtrack"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 56,
+  "fields": {
+    "name": "Can view mail track",
+    "content_type": 14,
+    "codename": "view_mailtrack"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 1,
+  "fields": {
+    "app_label": "admin",
+    "model": "logentry"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 2,
+  "fields": {
+    "app_label": "auth",
+    "model": "permission"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 3,
+  "fields": {
+    "app_label": "auth",
+    "model": "group"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 4,
+  "fields": {
+    "app_label": "contenttypes",
+    "model": "contenttype"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 5,
+  "fields": {
+    "app_label": "sessions",
+    "model": "session"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 6,
+  "fields": {
+    "app_label": "admin_manager",
+    "model": "product"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 7,
+  "fields": {
+    "app_label": "admin_manager",
+    "model": "user"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 8,
+  "fields": {
+    "app_label": "admin_manager",
+    "model": "contact"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 9,
+  "fields": {
+    "app_label": "admin_manager",
+    "model": "staff"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 10,
+  "fields": {
+    "app_label": "admin_manager",
+    "model": "order"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 11,
+  "fields": {
+    "app_label": "admin_manager",
+    "model": "ticket"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 12,
+  "fields": {
+    "app_label": "admin_manager",
+    "model": "orderdetail"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 13,
+  "fields": {
+    "app_label": "admin_manager",
+    "model": "campaign"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 14,
+  "fields": {
+    "app_label": "admin_manager",
+    "model": "mailtrack"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "a8emd5fyjykg0xx46hvm27g932wgwsma",
+  "fields": {
+    "session_data": ".eJxVjEEOwiAQRe_C2hDKUKQu3XsGMswMUjU0Ke3KeHdD0oVu_3vvv1XEfStxb7LGmdVFWXX63RLSU2oH_MB6XzQtdVvnpLuiD9r0bWF5XQ_376BgK72GPCATGRnAEzCjzQEIyafkZQqGYDLhbMGGkNHJOCKzMcCeXMqO1ecLENA44Q:1tJ8Sx:RIIl5YugMiWMe9thx3f_Vsdpmif_wcUC1tSommEZFbc",
+    "expire_date": "2024-12-19T09:48:11.190Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "twgqk0iscm0g9c1b85e3w9ig96p8y771",
+  "fields": {
+    "session_data": ".eJxVjDsOwjAQBe_iGln-KP5Q0nMGa727xgFkS3FSIe4OkVJA-2bmvUSCba1pG7ykmcRZaHH63TLgg9sO6A7t1iX2ti5zlrsiDzrktRM_L4f7d1Bh1G8dYsYSDDCa4mLIPHlFlm30hRwDBTSRCrBGVJNlMKQtO1KKXQ4IXrw_GEU5Ww:1tI7qu:ULsdx4vOIDDJWMMy0dw440zkuXfcyFIOk9mEvsqvcQo",
+    "expire_date": "2024-12-16T14:56:44.296Z"
+  }
+},
+{
+  "model": "admin_manager.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$870000$4T9S1gCX8x2WGBXAZXe35O$bb5/JviDAULM4vfoBZR/Cy2ihlLdkK0DzosgnCDZtHU=",
+    "last_login": "2024-12-04T14:45:33.111Z",
+    "is_superuser": true,
+    "username": "admin",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2024-12-02T14:55:50.895Z",
+    "email": "",
+    "phone_number": null,
+    "first_name": "",
+    "last_name": "",
+    "address": null,
+    "department_code": "01",
+    "user_type": "MANAGER",
+    "created_date": "2024-12-02T14:55:51.105Z",
+    "date_join": "2024-12-02",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "admin_manager.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$870000$ZEPPZ20HiseIHurBJ21gi5$Pu7dnOT0oChgwZVGUPau8yQ2t5nOqIrzyNOE6BykvF0=",
+    "last_login": "2024-12-05T09:48:11.186Z",
+    "is_superuser": false,
+    "username": "staff",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-12-02T17:23:41Z",
+    "email": "admin@gmail.com",
+    "phone_number": null,
+    "first_name": null,
+    "last_name": null,
+    "address": null,
+    "department_code": "01",
+    "user_type": "STAFF",
+    "created_date": "2024-12-02T17:23:41.511Z",
+    "date_join": "2024-12-03",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "admin_manager.user",
+  "pk": 3,
+  "fields": {
+    "password": "",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "phamvan",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-12-04T08:30:38.350Z",
+    "email": "pham.van@example.com",
+    "phone_number": "0923456789",
+    "first_name": "Pham",
+    "last_name": "Van",
+    "address": "789 Ly Thuong Kiet, Da Nang",
+    "department_code": "03",
+    "user_type": "MANAGER",
+    "created_date": "2024-12-04T08:30:38.350Z",
+    "date_join": "2024-12-04",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "admin_manager.user",
+  "pk": 4,
+  "fields": {
+    "password": "",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "hoanglan",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-12-04T08:30:38.353Z",
+    "email": "hoang.lan@example.com",
+    "phone_number": "0911111222",
+    "first_name": "Hoang",
+    "last_name": "Lan",
+    "address": "123 Ngo Quyen, Can Tho",
+    "department_code": "01",
+    "user_type": "CUSTOMER",
+    "created_date": "2024-12-04T08:30:38.353Z",
+    "date_join": "2024-12-04",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "admin_manager.user",
+  "pk": 5,
+  "fields": {
+    "password": "",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "doanhung",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-12-04T08:30:38.356Z",
+    "email": "doan.hung@example.com",
+    "phone_number": "0933333444",
+    "first_name": "Doan",
+    "last_name": "Hung",
+    "address": "456 Bach Dang, Hue",
+    "department_code": "02",
+    "user_type": "STAFF",
+    "created_date": "2024-12-04T08:30:38.356Z",
+    "date_join": "2024-12-04",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "admin_manager.user",
+  "pk": 101,
+  "fields": {
+    "password": "",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "nguyenminh",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-12-04T08:30:38.328Z",
+    "email": "ngoctan.ci33t@gmail.com",
+    "phone_number": "0987654321555",
+    "first_name": "Nguyen3 2",
+    "last_name": "Minh33",
+    "address": "123 Le Loi, Hanoi 33",
+    "department_code": "01",
+    "user_type": "CUSTOMER",
+    "created_date": "2024-12-04T08:30:38.332Z",
+    "date_join": "2024-12-04",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "admin_manager.user",
+  "pk": 102,
+  "fields": {
+    "password": "",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "tranthi",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-12-04T08:30:38.346Z",
+    "email": "crm-ruby-test01@yopmail.com",
+    "phone_number": "0912345678",
+    "first_name": "Tran",
+    "last_name": "Thi",
+    "address": "456 Tran Phu, Ho Chi Minh",
+    "department_code": "02",
+    "user_type": "STAFF",
+    "created_date": "2024-12-04T08:30:38.347Z",
+    "date_join": "2024-12-04",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "admin_manager.user",
+  "pk": 103,
+  "fields": {
+    "password": "pbkdf2_sha256$870000$36ixTe0w9QlZSb5PsUywRd$8knSnVaduxmqecAItGDJWSTnSWoaLGPMi9H9iWE+J0U=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "ngoctan.cit@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-12-05T02:27:19.844Z",
+    "email": "ngoctan.cit@gmail.com",
+    "phone_number": "0968966351",
+    "first_name": "Lê",
+    "last_name": "Tấn",
+    "address": "220 Nguyễn Hữu Thọ",
+    "department_code": "01",
+    "user_type": "CUSTOMER",
+    "created_date": "2024-12-05T02:27:20.061Z",
+    "date_join": "2024-12-05",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "admin_manager.user",
+  "pk": 104,
+  "fields": {
+    "password": "pbkdf2_sha256$870000$qJ51ufjGCGmZEEfJmBUyz3$91qXWT4urJXwVvQSahoE6Q5BggRU/Wbq4hr5MRKye4o=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "ngoctan.cit+1@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-12-05T02:35:08.681Z",
+    "email": "ngoctan.cit+1@gmail.com",
+    "phone_number": "0968966351",
+    "first_name": "Lê",
+    "last_name": "Tấn",
+    "address": "220 Nguyễn Hữu Thọ",
+    "department_code": "01",
+    "user_type": "CUSTOMER",
+    "created_date": "2024-12-05T02:35:08.905Z",
+    "date_join": "2024-12-05",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "admin_manager.user",
+  "pk": 105,
+  "fields": {
+    "password": "pbkdf2_sha256$870000$0l3tNBQv2vEGSLzjSDIigo$ATbQMAQChbeDM2CompliDcb1Zfh6URIK5o8pscY6xZM=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "ngocngoc@yopmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-12-05T02:42:13.245Z",
+    "email": "ngocngoc@yopmail.com",
+    "phone_number": "0933333",
+    "first_name": "thanh",
+    "last_name": "thanh",
+    "address": "asdf asdfasdf Ha NOI",
+    "department_code": "01",
+    "user_type": "CUSTOMER",
+    "created_date": "2024-12-05T02:42:13.468Z",
+    "date_join": "2024-12-05",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "admin_manager.user",
+  "pk": 106,
+  "fields": {
+    "password": "pbkdf2_sha256$870000$tF7pkCtTmuNBLy5eE4RGZ4$K+znnNcMS/O4QonV4Yu0lPn3M5rqjCkozrHIiXBrAUU=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "ngocngoc333@yopmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-12-05T02:44:40.836Z",
+    "email": "ngocngoc333@yopmail.com",
+    "phone_number": "0933333",
+    "first_name": "thanh",
+    "last_name": "thanh",
+    "address": "asdf asdfasdf Ha NOI",
+    "department_code": "01",
+    "user_type": "CUSTOMER",
+    "created_date": "2024-12-05T02:44:41.050Z",
+    "date_join": "2024-12-05",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "admin_manager.user",
+  "pk": 107,
+  "fields": {
+    "password": "defaultpassword",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "ngoctan.cit+11@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-12-05T02:51:06.713Z",
+    "email": "ngoctan.cit+11@gmail.com",
+    "phone_number": "0968966351",
+    "first_name": "asdf",
+    "last_name": "asdf",
+    "address": "asfd asdf",
+    "department_code": "01",
+    "user_type": "CUSTOMER",
+    "created_date": "2024-12-05T02:51:06.713Z",
+    "date_join": "2024-12-05",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "admin_manager.user",
+  "pk": 108,
+  "fields": {
+    "password": "pbkdf2_sha256$870000$UU5G8fVrrv9zflH4TYKcAb$yuOpp0Mud3YdZcnSHPLzZ0VOphTCejpvluBffHfZPUw=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "ngoctan.cit+12@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-12-05T02:55:16.696Z",
+    "email": "ngoctan.cit+12@gmail.com",
+    "phone_number": "0968966351",
+    "first_name": "asdf",
+    "last_name": "asdf",
+    "address": "asfd asdf",
+    "department_code": "01",
+    "user_type": "CUSTOMER",
+    "created_date": "2024-12-05T02:55:16.907Z",
+    "date_join": "2024-12-05",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "admin_manager.user",
+  "pk": 109,
+  "fields": {
+    "password": "pbkdf2_sha256$870000$3FVzqE0ezqg4mPF1L5jV1a$AItgHC8DtYHXqgT43nYaDJOq1IJXFh2Nx2GkhW3HFGQ=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "ngoctan.cit+14@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-12-05T02:56:52.928Z",
+    "email": "ngoctan.cit+14@gmail.com",
+    "phone_number": "0968966351",
+    "first_name": "asdf",
+    "last_name": "asdf",
+    "address": "asfd asdf",
+    "department_code": "01",
+    "user_type": "CUSTOMER",
+    "created_date": "2024-12-05T02:56:53.145Z",
+    "date_join": "2024-12-05",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "admin_manager.user",
+  "pk": 110,
+  "fields": {
+    "password": "pbkdf2_sha256$870000$QBUD9H5BYVrMmW1mh3e4Ze$96+6DAYTZojLzs1cLeWafxmTuJ6c3gSEVOSXLIEtbk8=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "usernamerandom",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-12-05T02:57:43.802Z",
+    "email": "ngoctan.cit+15@gmail.com",
+    "phone_number": "0968966351",
+    "first_name": "asdf",
+    "last_name": "asdf",
+    "address": "asfd asdf",
+    "department_code": "01",
+    "user_type": "CUSTOMER",
+    "created_date": "2024-12-05T02:57:44.018Z",
+    "date_join": "2024-12-05",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "admin_manager.user",
+  "pk": 111,
+  "fields": {
+    "password": "pbkdf2_sha256$870000$pUVvebyVr7hU3yqH0ZQRkn$CUYuyRlzhV0f6etEJB3Ci2a1Gs0exll+uD31iVSWsv8=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "yaaklujsdklj29@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-12-05T03:05:39.896Z",
+    "email": "yaaklujsdklj29@gmail.com",
+    "phone_number": "0968966351",
+    "first_name": "asdf",
+    "last_name": "asdf",
+    "address": "asfd asdf",
+    "department_code": "01",
+    "user_type": "CUSTOMER",
+    "created_date": "2024-12-05T03:05:40.119Z",
+    "date_join": "2024-12-05",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "admin_manager.user",
+  "pk": 112,
+  "fields": {
+    "password": "pbkdf2_sha256$870000$xF6etQY4oSNvv6I0wKWO9m$kFu4NhAjGZsYrRawJXGVBEf+cMzeEa/rsVA+k7cFOZ4=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "yaaklujsdklj29sdfsd@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-12-05T03:09:11.697Z",
+    "email": "yaaklujsdklj29sdfsd@gmail.com",
+    "phone_number": "0968966351",
+    "first_name": "asdf",
+    "last_name": "asdf",
+    "address": "asfd asdf",
+    "department_code": "01",
+    "user_type": "CUSTOMER",
+    "created_date": "2024-12-05T03:09:11.921Z",
+    "date_join": "2024-12-05",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "admin_manager.user",
+  "pk": 113,
+  "fields": {
+    "password": "defaultpassword",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "yadddaklujsdklj29sdfsd@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-12-05T03:11:51.295Z",
+    "email": "yadddaklujsdklj29sdfsd@gmail.com",
+    "phone_number": "0968966351",
+    "first_name": "asdf",
+    "last_name": "asdf",
+    "address": "asfd asdf",
+    "department_code": "01",
+    "user_type": "CUSTOMER",
+    "created_date": "2024-12-05T03:11:51.295Z",
+    "date_join": "2024-12-05",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "admin_manager.user",
+  "pk": 114,
+  "fields": {
+    "password": "defaultpassword",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "yaddddsdffdfaklujsdklj29sdfsd@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-12-05T03:12:37.539Z",
+    "email": "yaddddsdffdfaklujsdklj29sdfsd@gmail.com",
+    "phone_number": "0968966351",
+    "first_name": "asdf",
+    "last_name": "asdf",
+    "address": "asfd asdf",
+    "department_code": "01",
+    "user_type": "CUSTOMER",
+    "created_date": "2024-12-05T03:12:37.539Z",
+    "date_join": "2024-12-05",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "admin_manager.user",
+  "pk": 115,
+  "fields": {
+    "password": "defaultpassword",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "yaddddsdffdasdfasdffaklujsdklj29sdfsd@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-12-05T03:12:58.205Z",
+    "email": "yaddddsdffdasdfasdffaklujsdklj29sdfsd@gmail.com",
+    "phone_number": "0968966351",
+    "first_name": "asdf",
+    "last_name": "asdf",
+    "address": "asfd asdf",
+    "department_code": "01",
+    "user_type": "CUSTOMER",
+    "created_date": "2024-12-05T03:12:58.205Z",
+    "date_join": "2024-12-05",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "admin_manager.user",
+  "pk": 116,
+  "fields": {
+    "password": "defaultpassword",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "yaddddsdffij3sdklj29sdfsd@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-12-05T03:16:38.865Z",
+    "email": "yaddddsdffij3sdklj29sdfsd@gmail.com",
+    "phone_number": "0968966351",
+    "first_name": "asdf",
+    "last_name": "asdf",
+    "address": "asfd asdf",
+    "department_code": "01",
+    "user_type": "CUSTOMER",
+    "created_date": "2024-12-05T03:16:38.866Z",
+    "date_join": "2024-12-05",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "admin_manager.user",
+  "pk": 117,
+  "fields": {
+    "password": "defaultpassword",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "yaddsdklj29sdfsd@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-12-05T03:17:32.378Z",
+    "email": "yaddsdklj29sdfsd@gmail.com",
+    "phone_number": "0968966351",
+    "first_name": "asdf",
+    "last_name": "asdf",
+    "address": "asfd asdf",
+    "department_code": "01",
+    "user_type": "CUSTOMER",
+    "created_date": "2024-12-05T03:17:32.378Z",
+    "date_join": "2024-12-05",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "admin_manager.user",
+  "pk": 118,
+  "fields": {
+    "password": "defaultpassword",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "yadddsdklj29sdfsd@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-12-05T03:23:53.489Z",
+    "email": "yadddsdklj29sdfsd@gmail.com",
+    "phone_number": "0968966351",
+    "first_name": "asdf",
+    "last_name": "asdf",
+    "address": "asfd asdf",
+    "department_code": "01",
+    "user_type": "CUSTOMER",
+    "created_date": "2024-12-05T03:23:53.490Z",
+    "date_join": "2024-12-05",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "admin_manager.user",
+  "pk": 119,
+  "fields": {
+    "password": "defaultpassword",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "klj29sdfsd@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-12-05T03:24:30.523Z",
+    "email": "klj29sdfsd@gmail.com",
+    "phone_number": "0968966351",
+    "first_name": "asdf",
+    "last_name": "asdf",
+    "address": "asfd asdf",
+    "department_code": "01",
+    "user_type": "CUSTOMER",
+    "created_date": "2024-12-05T03:24:30.523Z",
+    "date_join": "2024-12-05",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "admin_manager.user",
+  "pk": 120,
+  "fields": {
+    "password": "defaultpassword",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "klj2d@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-12-05T03:25:09.010Z",
+    "email": "klj2d@gmail.com",
+    "phone_number": "0968966351",
+    "first_name": "asdf",
+    "last_name": "asdf",
+    "address": "asfd asdf",
+    "department_code": "01",
+    "user_type": "CUSTOMER",
+    "created_date": "2024-12-05T03:25:09.010Z",
+    "date_join": "2024-12-05",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "admin_manager.user",
+  "pk": 121,
+  "fields": {
+    "password": "defaultpassword",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "klj2d3@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-12-05T03:25:30.160Z",
+    "email": "klj2d3@gmail.com",
+    "phone_number": "0968966351",
+    "first_name": "asdf",
+    "last_name": "asdf",
+    "address": "asfd asdf",
+    "department_code": "01",
+    "user_type": "CUSTOMER",
+    "created_date": "2024-12-05T03:25:30.160Z",
+    "date_join": "2024-12-05",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "admin_manager.user",
+  "pk": 122,
+  "fields": {
+    "password": "defaultpassword",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "klj2ed3@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-12-05T03:28:00.719Z",
+    "email": "klj2ed3@gmail.com",
+    "phone_number": "0968966351",
+    "first_name": "asdf",
+    "last_name": "asdf",
+    "address": "asfd asdf",
+    "department_code": "01",
+    "user_type": "CUSTOMER",
+    "created_date": "2024-12-05T03:28:00.719Z",
+    "date_join": "2024-12-05",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "admin_manager.user",
+  "pk": 123,
+  "fields": {
+    "password": "defaultpassword",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "ngoctan.cit+19@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-12-05T03:28:15.295Z",
+    "email": "ngoctan.cit+19@gmail.com",
+    "phone_number": "0968966351",
+    "first_name": "Lê",
+    "last_name": "Tấn",
+    "address": "220 Nguyễn Hữu Thọ",
+    "department_code": "01",
+    "user_type": "CUSTOMER",
+    "created_date": "2024-12-05T03:28:15.295Z",
+    "date_join": "2024-12-05",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "admin_manager.contact",
+  "pk": 5,
+  "fields": {
+    "contact_id": "KH001",
+    "user": 101,
+    "address": "123 Le Loi, Hanoi 33",
+    "lifecycle_stage": "EVANGELIST",
+    "created_date": "2024-12-04T08:30:38.360Z"
+  }
+},
+{
+  "model": "admin_manager.contact",
+  "pk": 6,
+  "fields": {
+    "contact_id": "KH002",
+    "user": 4,
+    "address": "123 Ngo Quyen, Can Tho",
+    "lifecycle_stage": "LEAD",
+    "created_date": "2024-12-04T08:30:38.363Z"
+  }
+},
+{
+  "model": "admin_manager.contact",
+  "pk": 7,
+  "fields": {
+    "contact_id": "KH003",
+    "user": 5,
+    "address": "456 Bach Dang, Hue",
+    "lifecycle_stage": "OPPORTUNITY",
+    "created_date": "2024-12-04T08:30:38.367Z"
+  }
+},
+{
+  "model": "admin_manager.contact",
+  "pk": 8,
+  "fields": {
+    "contact_id": "KH004",
+    "user": 102,
+    "address": "456 Tran Phu, Ho Chi Minh",
+    "lifecycle_stage": "EVANGELIST",
+    "created_date": "2024-12-04T08:30:38.370Z"
+  }
+},
+{
+  "model": "admin_manager.contact",
+  "pk": 9,
+  "fields": {
+    "contact_id": "KH005",
+    "user": 121,
+    "address": "asfd asdf",
+    "lifecycle_stage": "SUBSCRIBER",
+    "created_date": "2024-12-05T03:25:30.178Z"
+  }
+},
+{
+  "model": "admin_manager.contact",
+  "pk": 10,
+  "fields": {
+    "contact_id": "KH006",
+    "user": 122,
+    "address": "asfd asdf",
+    "lifecycle_stage": "SUBSCRIBER",
+    "created_date": "2024-12-05T03:28:00.734Z"
+  }
+},
+{
+  "model": "admin_manager.contact",
+  "pk": 11,
+  "fields": {
+    "contact_id": "KH007",
+    "user": 123,
+    "address": "220 Nguyễn Hữu Thọ",
+    "lifecycle_stage": "SUBSCRIBER",
+    "created_date": "2024-12-05T03:28:15.300Z"
+  }
+},
+{
+  "model": "admin_manager.staff",
+  "pk": 1,
+  "fields": {
+    "staff_id": "NV0201",
+    "user": 102,
+    "hire_date": "2023-11-01",
+    "created_date": "2024-12-04T08:30:38.379Z"
+  }
+},
+{
+  "model": "admin_manager.staff",
+  "pk": 2,
+  "fields": {
+    "staff_id": "NV0301",
+    "user": 3,
+    "hire_date": "2022-10-15",
+    "created_date": "2024-12-04T08:30:38.382Z"
+  }
+},
+{
+  "model": "admin_manager.staff",
+  "pk": 3,
+  "fields": {
+    "staff_id": "NV0202",
+    "user": 5,
+    "hire_date": "2023-08-01",
+    "created_date": "2024-12-04T08:30:38.386Z"
+  }
+},
+{
+  "model": "admin_manager.order",
+  "pk": 4,
+  "fields": {
+    "order_id": "DH001",
+    "created_date": "2024-12-05T04:10:46.542Z",
+    "status": "PENDING",
+    "total_price": "50000.00",
+    "contact_name": 5,
+    "staff_name": 1
+  }
+},
+{
+  "model": "admin_manager.order",
+  "pk": 5,
+  "fields": {
+    "order_id": "DH002",
+    "created_date": "2024-12-05T04:10:46.559Z",
+    "status": "DELIVERED",
+    "total_price": "75000.00",
+    "contact_name": 6,
+    "staff_name": 3
+  }
+},
+{
+  "model": "admin_manager.order",
+  "pk": 6,
+  "fields": {
+    "order_id": "DH003",
+    "created_date": "2024-12-05T04:10:46.563Z",
+    "status": "ON_DELIVERY",
+    "total_price": "95000.00",
+    "contact_name": 7,
+    "staff_name": 2
+  }
+},
+{
+  "model": "admin_manager.product",
+  "pk": 1,
+  "fields": {
+    "product_id": "P001",
+    "product_name": "Mì Tôm Hảo Hảo",
+    "quantity": 100,
+    "unit_price": "3500.00",
+    "unit": "gói",
+    "created_date": "2024-12-04T08:30:38.388Z"
+  }
+},
+{
+  "model": "admin_manager.product",
+  "pk": 2,
+  "fields": {
+    "product_id": "P002",
+    "product_name": "Nước Ngọt Coca Cola",
+    "quantity": 50,
+    "unit_price": "15000.00",
+    "unit": "lon",
+    "created_date": "2024-12-04T08:30:38.391Z"
+  }
+},
+{
+  "model": "admin_manager.product",
+  "pk": 3,
+  "fields": {
+    "product_id": "P003",
+    "product_name": "Bánh Kẹo Chocopie",
+    "quantity": 30,
+    "unit_price": "25000.00",
+    "unit": "hộp",
+    "created_date": "2024-12-04T08:30:38.394Z"
+  }
+},
+{
+  "model": "admin_manager.product",
+  "pk": 4,
+  "fields": {
+    "product_id": "P004",
+    "product_name": "Bánh Tráng Tây Ninh",
+    "quantity": 40,
+    "unit_price": "12000.00",
+    "unit": "bịch",
+    "created_date": "2024-12-04T08:30:38.397Z"
+  }
+},
+{
+  "model": "admin_manager.product",
+  "pk": 5,
+  "fields": {
+    "product_id": "P005",
+    "product_name": "Trà Sữa Matcha",
+    "quantity": 70,
+    "unit_price": "20000.00",
+    "unit": "chai",
+    "created_date": "2024-12-04T08:30:38.400Z"
+  }
+},
+{
+  "model": "admin_manager.orderdetail",
+  "pk": 1,
+  "fields": {
+    "order": 4,
+    "product": 1,
+    "quantity": 10,
+    "product_price": "3500.00",
+    "created_date": "2024-12-05T04:20:26.938Z"
+  }
+},
+{
+  "model": "admin_manager.orderdetail",
+  "pk": 2,
+  "fields": {
+    "order": 4,
+    "product": 2,
+    "quantity": 3,
+    "product_price": "15000.00",
+    "created_date": "2024-12-05T04:20:26.943Z"
+  }
+},
+{
+  "model": "admin_manager.orderdetail",
+  "pk": 3,
+  "fields": {
+    "order": 4,
+    "product": 3,
+    "quantity": 5,
+    "product_price": "25000.00",
+    "created_date": "2024-12-05T04:20:26.947Z"
+  }
+},
+{
+  "model": "admin_manager.orderdetail",
+  "pk": 4,
+  "fields": {
+    "order": 5,
+    "product": 1,
+    "quantity": 10,
+    "product_price": "3500.00",
+    "created_date": "2024-12-05T04:20:26.952Z"
+  }
+},
+{
+  "model": "admin_manager.orderdetail",
+  "pk": 5,
+  "fields": {
+    "order": 5,
+    "product": 2,
+    "quantity": 3,
+    "product_price": "15000.00",
+    "created_date": "2024-12-05T04:20:26.957Z"
+  }
+},
+{
+  "model": "admin_manager.orderdetail",
+  "pk": 6,
+  "fields": {
+    "order": 5,
+    "product": 3,
+    "quantity": 5,
+    "product_price": "25000.00",
+    "created_date": "2024-12-05T04:20:26.961Z"
+  }
+},
+{
+  "model": "admin_manager.orderdetail",
+  "pk": 7,
+  "fields": {
+    "order": 6,
+    "product": 1,
+    "quantity": 10,
+    "product_price": "3500.00",
+    "created_date": "2024-12-05T04:20:26.964Z"
+  }
+},
+{
+  "model": "admin_manager.orderdetail",
+  "pk": 8,
+  "fields": {
+    "order": 6,
+    "product": 2,
+    "quantity": 3,
+    "product_price": "15000.00",
+    "created_date": "2024-12-05T04:20:26.968Z"
+  }
+},
+{
+  "model": "admin_manager.orderdetail",
+  "pk": 9,
+  "fields": {
+    "order": 6,
+    "product": 3,
+    "quantity": 5,
+    "product_price": "25000.00",
+    "created_date": "2024-12-05T04:20:26.970Z"
+  }
+},
+{
+  "model": "admin_manager.ticket",
+  "pk": 8,
+  "fields": {
+    "title": "asdfasdf ádfádf",
+    "description": "asdf sdfád",
+    "subject": "SERVICE_ISSUE",
+    "created_date": "2024-12-04T08:52:33.456Z",
+    "closed_date": null,
+    "status": "WAITING_ON_CONTACT",
+    "priority": "MEDIUM",
+    "user": 101,
+    "order": 5
+  }
+},
+{
+  "model": "admin_manager.ticket",
+  "pk": 9,
+  "fields": {
+    "title": "new",
+    "description": "new",
+    "subject": "ORDER_ISSUE",
+    "created_date": "2024-12-05T08:23:25.288Z",
+    "closed_date": null,
+    "status": "NEW",
+    "priority": "LOW",
+    "user": null,
+    "order": 4
+  }
+},
+{
+  "model": "admin_manager.ticket",
+  "pk": 10,
+  "fields": {
+    "title": "dh03",
+    "description": "dh03",
+    "subject": "ORDER_ISSUE",
+    "created_date": "2024-12-05T08:24:06.525Z",
+    "closed_date": null,
+    "status": "NEW",
+    "priority": "LOW",
+    "user": null,
+    "order": 5
+  }
+},
+{
+  "model": "admin_manager.ticket",
+  "pk": 11,
+  "fields": {
+    "title": "3",
+    "description": "333",
+    "subject": "ORDER_ISSUE",
+    "created_date": "2024-12-05T08:26:42.448Z",
+    "closed_date": null,
+    "status": "SOLVED",
+    "priority": "MEDIUM",
+    "user": null,
+    "order": 4
+  }
+},
+{
+  "model": "admin_manager.ticket",
+  "pk": 12,
+  "fields": {
+    "title": "tick",
+    "description": "asdf",
+    "subject": "SERVICE_ISSUE",
+    "created_date": "2024-12-05T08:39:50.302Z",
+    "closed_date": null,
+    "status": "CLOSED",
+    "priority": "MEDIUM",
+    "user": null,
+    "order": 6
+  }
+},
+{
+  "model": "admin_manager.ticket",
+  "pk": 13,
+  "fields": {
+    "title": "asdfasdf",
+    "description": "asdfasd asdf as",
+    "subject": "SERVICE_ISSUE",
+    "created_date": "2024-12-05T08:40:48.624Z",
+    "closed_date": null,
+    "status": "IN_PROGRESS",
+    "priority": "MEDIUM",
+    "user": null,
+    "order": 4
+  }
+},
+{
+  "model": "admin_manager.ticket",
+  "pk": 14,
+  "fields": {
+    "title": "adfád",
+    "description": "fádfádf",
+    "subject": "SERVICE_ISSUE",
+    "created_date": "2024-12-05T08:43:21.980Z",
+    "closed_date": null,
+    "status": "NEW",
+    "priority": "LOW",
+    "user": null,
+    "order": 6
+  }
+},
+{
+  "model": "admin_manager.ticket",
+  "pk": 15,
+  "fields": {
+    "title": "fas asdf",
+    "description": "asdf",
+    "subject": "ORDER_ISSUE",
+    "created_date": "2024-12-05T08:47:58.590Z",
+    "closed_date": null,
+    "status": "NEW",
+    "priority": "HIGH",
+    "user": null,
+    "order": 4
+  }
+},
+{
+  "model": "admin_manager.ticket",
+  "pk": 16,
+  "fields": {
+    "title": "heigh",
+    "description": "heigh",
+    "subject": "SERVICE_ISSUE",
+    "created_date": "2024-12-05T09:28:12.801Z",
+    "closed_date": null,
+    "status": "SOLVED",
+    "priority": "HIGH",
+    "user": null,
+    "order": 6
+  }
+},
+{
+  "model": "admin_manager.ticket",
+  "pk": 17,
+  "fields": {
+    "title": "asdf as dasd f",
+    "description": "as dfasd",
+    "subject": "SERVICE_ISSUE",
+    "created_date": "2024-12-05T09:43:28.269Z",
+    "closed_date": null,
+    "status": "NEW",
+    "priority": "LOW",
+    "user": null,
+    "order": 5
+  }
+},
+{
+  "model": "admin_manager.campaign",
+  "pk": 3,
+  "fields": {
+    "name": "Khuyến mãi Giáng Sinh - Săn sale Noel 2024 tại CellphoneS",
+    "start_date": "2024-11-20",
+    "end_date": "2024-11-30",
+    "status": "PLANNED",
+    "staff": 2,
+    "created_date": "2024-12-04T08:33:37.272Z",
+    "mail_subject": "asdfas",
+    "mail_content": "<h2><i><strong>Khuyến mãi Giáng Sinh - Săn sale Noel 2024 tại CellphoneS</strong></i></h2><p>Noel gần kề, vào không khí Giáng sinh, một ngày lễ đầy ý nghĩa, CellphoneS khuyến mãi Giáng sinh với nhiều chương trình hấp dẫn dành cho các sản phẩm công nghệ như điện thoại, tai nghe, laptop,... Noel sẽ có ý nghĩa thế nào, bạn suy nghĩ khó khăn trong việc lựa chọn quà Giáng sinh ý nghĩa cho người yêu. Bài viết dưới đây sẽ giúp bạn tìm được quà tặng ưng ý cho người thân yêu của mình.</p><p><img src=\"https://cdn2.cellphones.com.vn/insecure/rs:fill:840:0/q:90/plain/https://cellphones.com.vn/media/wysiwyg/khuyen-mai-giang-sinh-1.jpg\" alt=\"Khuyến mãi Giáng Sinh - Săn sale Noel 2021 tại CellphoneS\"></p><p><i><strong>Tham khảo ngay</strong>: Những món&nbsp;<strong>Quà Tết 2025</strong>&nbsp;tinh tế dành tặng những người thân yêu của mình nhé.</i></p>"
+  }
+},
+{
+  "model": "admin_manager.campaign",
+  "pk": 4,
+  "fields": {
+    "name": "Ưu đãi Noel",
+    "start_date": "2024-12-10",
+    "end_date": "2024-12-25",
+    "status": "ACTIVE",
+    "staff": 2,
+    "created_date": "2024-12-04T08:33:37.276Z",
+    "mail_subject": null,
+    "mail_content": null
+  }
+},
+{
+  "model": "admin_manager.campaign",
+  "pk": 5,
+  "fields": {
+    "name": "Khuyến mãi Tết",
+    "start_date": "2025-01-01",
+    "end_date": "2025-02-10",
+    "status": "PLANNED",
+    "staff": 2,
+    "created_date": "2024-12-04T08:33:37.279Z",
+    "mail_subject": null,
+    "mail_content": null
+  }
+},
+{
+  "model": "admin_manager.campaign",
+  "pk": 7,
+  "fields": {
+    "name": "Tháng vàng mua sắm abc",
+    "start_date": "2025-03-01",
+    "end_date": "2025-03-31",
+    "status": "ACTIVE",
+    "staff": 2,
+    "created_date": "2024-12-04T08:33:37.286Z",
+    "mail_subject": null,
+    "mail_content": null
+  }
+},
+{
+  "model": "admin_manager.campaign",
+  "pk": 8,
+  "fields": {
+    "name": "Mùa hè siêu giảm giá 2025",
+    "start_date": "2025-01-09",
+    "end_date": "2025-03-02",
+    "status": "PLANNED",
+    "staff": 1,
+    "created_date": "2024-12-04T14:48:49.666Z",
+    "mail_subject": "Chào bạn đến với Mùa hè siêu giảm giá 2025 (09/01/2025 - 02/03/2025)",
+    "mail_content": "<p><img src=\"https://cdn.mediamart.vn/images/news/he-ruc-ro---giam-het-co---sale-soc-toi-50_346bf7ee.png\" alt=\"Hè rực rỡ - Giảm hết cỡ - Sale Sốc tới 50%\"></p><h2>Hè rực rỡ - Giảm hết cỡ - Sale Sốc tới 50%</h2><p>Trước cái nóng mùa hè gay gắt, MediaMart tung ra bão sale giải nhiệt giảm lớn đến 50% hàng loạt sản phẩm điện máy, điện lạnh, gia dụng, công nghệ trong chương trình “Hè rực rỡ - Giảm hết cỡ” đi kèm nhiều quà tặng hấp dẫn. Đây là cơ hội để người tiêu dùng sắm sửa các sản phẩm chất lượng với mức giá không thể rẻ hơn. Chương trình kéo dài từ ngày 01/06/2024 đến ngày 28/06/2024. Số lượng có hạn, chốt đơn ngay!</p>"
+  }
+},
+{
+  "model": "admin_manager.mailtrack",
+  "pk": 3,
+  "fields": {
+    "contact": 6,
+    "campaign": 4,
+    "is_send": false,
+    "is_open": true,
+    "is_click": true,
+    "is_unsubscribe": false
+  }
+},
+{
+  "model": "admin_manager.mailtrack",
+  "pk": 4,
+  "fields": {
+    "contact": 7,
+    "campaign": 5,
+    "is_send": true,
+    "is_open": false,
+    "is_click": true,
+    "is_unsubscribe": true
+  }
+},
+{
+  "model": "admin_manager.mailtrack",
+  "pk": 5,
+  "fields": {
+    "contact": 8,
+    "campaign": 5,
+    "is_send": true,
+    "is_open": true,
+    "is_click": false,
+    "is_unsubscribe": false
+  }
+},
+{
+  "model": "admin_manager.mailtrack",
+  "pk": 6,
+  "fields": {
+    "contact": 5,
+    "campaign": 4,
+    "is_send": false,
+    "is_open": true,
+    "is_click": true,
+    "is_unsubscribe": false
+  }
+},
+{
+  "model": "admin_manager.mailtrack",
+  "pk": 7,
+  "fields": {
+    "contact": 6,
+    "campaign": 5,
+    "is_send": true,
+    "is_open": false,
+    "is_click": true,
+    "is_unsubscribe": true
+  }
+},
+{
+  "model": "admin_manager.mailtrack",
+  "pk": 8,
+  "fields": {
+    "contact": 7,
+    "campaign": 5,
+    "is_send": true,
+    "is_open": true,
+    "is_click": false,
+    "is_unsubscribe": false
+  }
+},
+{
+  "model": "admin_manager.mailtrack",
+  "pk": 9,
+  "fields": {
+    "contact": 8,
+    "campaign": 4,
+    "is_send": false,
+    "is_open": true,
+    "is_click": true,
+    "is_unsubscribe": false
+  }
+},
+{
+  "model": "admin_manager.mailtrack",
+  "pk": 10,
+  "fields": {
+    "contact": 5,
+    "campaign": 5,
+    "is_send": true,
+    "is_open": false,
+    "is_click": true,
+    "is_unsubscribe": true
+  }
+},
+{
+  "model": "admin_manager.mailtrack",
+  "pk": 11,
+  "fields": {
+    "contact": 6,
+    "campaign": 5,
+    "is_send": true,
+    "is_open": true,
+    "is_click": false,
+    "is_unsubscribe": false
+  }
+},
+{
+  "model": "admin_manager.mailtrack",
+  "pk": 12,
+  "fields": {
+    "contact": 7,
+    "campaign": 4,
+    "is_send": false,
+    "is_open": true,
+    "is_click": true,
+    "is_unsubscribe": false
+  }
+},
+{
+  "model": "admin_manager.mailtrack",
+  "pk": 13,
+  "fields": {
+    "contact": 8,
+    "campaign": 5,
+    "is_send": true,
+    "is_open": false,
+    "is_click": true,
+    "is_unsubscribe": true
+  }
+},
+{
+  "model": "admin_manager.mailtrack",
+  "pk": 14,
+  "fields": {
+    "contact": 5,
+    "campaign": 5,
+    "is_send": true,
+    "is_open": true,
+    "is_click": false,
+    "is_unsubscribe": false
+  }
+},
+{
+  "model": "admin_manager.mailtrack",
+  "pk": 15,
+  "fields": {
+    "contact": 6,
+    "campaign": 4,
+    "is_send": false,
+    "is_open": true,
+    "is_click": true,
+    "is_unsubscribe": false
+  }
+},
+{
+  "model": "admin_manager.mailtrack",
+  "pk": 16,
+  "fields": {
+    "contact": 7,
+    "campaign": 5,
+    "is_send": true,
+    "is_open": false,
+    "is_click": true,
+    "is_unsubscribe": true
+  }
+},
+{
+  "model": "admin_manager.mailtrack",
+  "pk": 17,
+  "fields": {
+    "contact": 8,
+    "campaign": 5,
+    "is_send": true,
+    "is_open": true,
+    "is_click": false,
+    "is_unsubscribe": false
+  }
+},
+{
+  "model": "admin_manager.mailtrack",
+  "pk": 18,
+  "fields": {
+    "contact": 5,
+    "campaign": 4,
+    "is_send": false,
+    "is_open": true,
+    "is_click": true,
+    "is_unsubscribe": false
+  }
+},
+{
+  "model": "admin_manager.mailtrack",
+  "pk": 19,
+  "fields": {
+    "contact": 6,
+    "campaign": 5,
+    "is_send": true,
+    "is_open": false,
+    "is_click": true,
+    "is_unsubscribe": true
+  }
+},
+{
+  "model": "admin_manager.mailtrack",
+  "pk": 20,
+  "fields": {
+    "contact": 7,
+    "campaign": 5,
+    "is_send": true,
+    "is_open": true,
+    "is_click": false,
+    "is_unsubscribe": false
+  }
+},
+{
+  "model": "admin_manager.mailtrack",
+  "pk": 21,
+  "fields": {
+    "contact": 8,
+    "campaign": 4,
+    "is_send": false,
+    "is_open": true,
+    "is_click": true,
+    "is_unsubscribe": false
+  }
+},
+{
+  "model": "admin_manager.mailtrack",
+  "pk": 23,
+  "fields": {
+    "contact": 8,
+    "campaign": 3,
+    "is_send": true,
+    "is_open": true,
+    "is_click": true,
+    "is_unsubscribe": false
+  }
+},
+{
+  "model": "admin_manager.mailtrack",
+  "pk": 25,
+  "fields": {
+    "contact": 5,
+    "campaign": 3,
+    "is_send": true,
+    "is_open": true,
+    "is_click": true,
+    "is_unsubscribe": false
+  }
+},
+{
+  "model": "admin_manager.mailtrack",
+  "pk": 26,
+  "fields": {
+    "contact": 5,
+    "campaign": 8,
+    "is_send": true,
+    "is_open": false,
+    "is_click": true,
+    "is_unsubscribe": false
+  }
+},
+{
+  "model": "admin_manager.mailtrack",
+  "pk": 28,
+  "fields": {
+    "contact": 7,
+    "campaign": 8,
+    "is_send": true,
+    "is_open": false,
+    "is_click": false,
+    "is_unsubscribe": false
+  }
+}
+]

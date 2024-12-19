@@ -1,0 +1,511 @@
+{% extends 'admin_base.html' %} {% block content %} {% load humanize %}
+<div class="container-fluid">
+  <div class="card">
+    <div class="card-header">
+      <h4 class="card-title d-flex justify-content-between">
+        Ticket
+        <div class="d-flex">
+          <form action="{% url 'admin-ticket' %}">
+            <div class="input-icon input-sm" style="margin-right: 10px">
+              <input
+                type="text"
+                name="name"
+                value="{{query_string_name}}"
+                class="form-control form-control-sm"
+                placeholder="Search for ticket"
+              />
+              <span class="input-icon-addon">
+                <i class="fa fa-search"></i>
+              </span>
+            </div>
+          </form>
+          <h6 style="margin-right: 10px;">
+            <a href="{% url 'admin-ticket' %}"> Reset </a>
+          </h6>
+          <button
+            class="btn btn-info btn-sm"
+            data-bs-toggle="modal"
+            data-bs-target="#createNewTicketModal"
+          >
+            <i class="fas fa-plus-circle"></i>
+            Create ticket
+          </button>
+        </div>
+      </h4>
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table id="ticket-datatables" class="display table table-bordered">
+          <thead>
+            <tr>
+              <th>NEW</th>
+              <th>WAITING ON CONTACT</th>
+              <th>IN-PROGRESS</th>
+              <th>SOLVED</th>
+              <th>CLOSED</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                {% for ticket in new_tickets %}
+                <div class="ticket-tag ticket-priority-height">
+                  <div
+                    class="ticket-tag-title text-primary d-flex justify-content-between"
+                  >
+                    {{ticket.title}}
+                    <div>
+                      <a href="/system-admin/ticket-detail/{{ticket.ticket_id}}/">
+                        <i
+                          class="fas fa-clipboard-list edit-ticket-btn"
+                          style="width: 30px; height: 30px"
+                        ></i>
+                      </a>
+                      <i
+                        class="fas fa-edit edit-ticket-btn"
+                        style="width: 30px; height: 30px"
+                        data-bs-toggle="modal"
+                        data-bs-target="#updateTicketModal"
+                        onclick="fetchTicketById({{ticket.ticket_id}})"
+                      ></i>
+                    </div>
+                  </div>
+                  <div class="ticket-tag-time">
+                    {{ticket.created_date|naturaltime}}
+                  </div>
+                  <div class="ticket-tag-subject">
+                    Subject: {{ticket.subject}}
+                  </div>
+                  <div class="ticket-tag-priority-status">
+                    <div class="ticket-tag-priority-status-text">
+                      {{ticket.priority}}
+                    </div>
+                    <div
+                      class="ticket-tag-priority-status-{{ticket.priority}} ticket-tag-priority-status-color ticket-tag-priority-status-color-{{ticket.priority}} "
+                    ></div>
+                  </div>
+                </div>
+                {% endfor %}
+              </td>
+              <td>
+                {% for ticket in waiting_on_contact_tickets %}
+                <div class="ticket-tag ticket-priority-height">
+                  <div
+                    class="ticket-tag-title text-primary d-flex justify-content-between"
+                  >
+                    {{ticket.title}}
+                    <div>
+                      <a href="/system-admin/ticket-detail/{{ticket.ticket_id}}/">
+                        <i
+                          class="fas fa-clipboard-list edit-ticket-btn"
+                          style="width: 30px; height: 30px"
+                        ></i>
+                      </a>
+                      <i
+                        class="fas fa-edit edit-ticket-btn"
+                        style="width: 30px; height: 30px"
+                        data-bs-toggle="modal"
+                        data-bs-target="#updateTicketModal"
+                        onclick="fetchTicketById({{ticket.ticket_id}})"
+                      ></i>
+                    </div>
+                  </div>
+                  <div class="ticket-tag-time">
+                    {{ticket.created_date|naturaltime}}
+                  </div>
+                  <div class="ticket-tag-subject">
+                    Subject: {{ticket.subject}}
+                  </div>
+                  <div class="ticket-tag-priority-status">
+                    <div class="ticket-tag-priority-status-text">
+                      {{ticket.priority}}
+                    </div>
+                    <div
+                      class="ticket-tag-priority-status-{{ticket.priority}} ticket-tag-priority-status-color ticket-tag-priority-status-color-{{ticket.priority}} "
+                    ></div>
+                  </div>
+                </div>
+                {% endfor %}
+              </td>
+              <td>
+                {% for ticket in in_progress_tickets %}
+                <div class="ticket-tag ticket-priority-height">
+                  <div
+                    class="ticket-tag-title text-primary d-flex justify-content-between"
+                  >
+                    {{ticket.title}}
+                    <div>
+                      <a href="/system-admin/ticket-detail/{{ticket.ticket_id}}/">
+                        <i
+                          class="fas fa-clipboard-list edit-ticket-btn"
+                          style="width: 30px; height: 30px"
+                        ></i>
+                      </a>
+                      <i
+                        class="fas fa-edit edit-ticket-btn"
+                        style="width: 30px; height: 30px"
+                        data-bs-toggle="modal"
+                        data-bs-target="#updateTicketModal"
+                        onclick="fetchTicketById({{ticket.ticket_id}})"
+                      ></i>
+                    </div>
+                  </div>
+                  <div class="ticket-tag-time">
+                    {{ticket.created_date|naturaltime}}
+                  </div>
+                  <div class="ticket-tag-subject">
+                    Subject: {{ticket.subject}}
+                  </div>
+                  <div class="ticket-tag-priority-status">
+                    <div class="ticket-tag-priority-status-text">
+                      {{ticket.priority}}
+                    </div>
+                    <div
+                      class="ticket-tag-priority-status-{{ticket.priority}} ticket-tag-priority-status-color ticket-tag-priority-status-color-{{ticket.priority}} "
+                    ></div>
+                  </div>
+                </div>
+                {% endfor %}
+              </td>
+              <td>
+                {% for ticket in solved_tickets %}
+                <div class="ticket-tag ticket-priority-height">
+                  <div
+                    class="ticket-tag-title text-primary d-flex justify-content-between"
+                  >
+                    {{ticket.title}}
+                    <div>
+                      <a href="/system-admin/ticket-detail/{{ticket.ticket_id}}/">
+                        <i
+                          class="fas fa-clipboard-list edit-ticket-btn"
+                          style="width: 30px; height: 30px"
+                        ></i>
+                      </a>
+                      <i
+                        class="fas fa-edit edit-ticket-btn"
+                        style="width: 30px; height: 30px"
+                        data-bs-toggle="modal"
+                        data-bs-target="#updateTicketModal"
+                        onclick="fetchTicketById({{ticket.ticket_id}})"
+                      ></i>
+                    </div>
+                  </div>
+                  <div class="ticket-tag-time">
+                    {{ticket.created_date|naturaltime}}
+                  </div>
+                  <div class="ticket-tag-subject">
+                    Subject: {{ticket.subject}}
+                  </div>
+                  <div class="ticket-tag-priority-status">
+                    <div class="ticket-tag-priority-status-text">
+                      {{ticket.priority}}
+                    </div>
+                    <div
+                      class="ticket-tag-priority-status-{{ticket.priority}} ticket-tag-priority-status-color ticket-tag-priority-status-color-{{ticket.priority}} "
+                    ></div>
+                  </div>
+                </div>
+                {% endfor %}
+              </td>
+              <td>
+                {% for ticket in closed_tickets %}
+                <div class="ticket-tag ticket-priority-height">
+                  <div
+                    class="ticket-tag-title text-primary d-flex justify-content-between"
+                  >
+                    {{ticket.title}}
+                    <div>
+                      <a href="/system-admin/ticket-detail/{{ticket.ticket_id}}/">
+                        <i
+                          class="fas fa-clipboard-list edit-ticket-btn"
+                          style="width: 30px; height: 30px"
+                        ></i>
+                      </a>
+                      <i
+                        class="fas fa-edit edit-ticket-btn"
+                        style="width: 30px; height: 30px"
+                        data-bs-toggle="modal"
+                        data-bs-target="#updateTicketModal"
+                        onclick="fetchTicketById({{ticket.ticket_id}})"
+                      ></i>
+                    </div>
+                  </div>
+                  <div class="ticket-tag-time">
+                    {{ticket.created_date|naturaltime}}
+                  </div>
+                  <div class="ticket-tag-subject">
+                    Subject: {{ticket.subject}}
+                  </div>
+                  <div class="ticket-tag-priority-status">
+                    <div class="ticket-tag-priority-status-text">
+                      {{ticket.priority}}
+                    </div>
+                    <div
+                      class="ticket-tag-priority-status-{{ticket.priority}} ticket-tag-priority-status-color ticket-tag-priority-status-color-{{ticket.priority}} "
+                    ></div>
+                  </div>
+                </div>
+                {% endfor %}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div
+    class="modal fade model-lg"
+    id="createNewTicketModal"
+    tabindex="-1"
+    aria-labelledby="createNewTicketModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="createNewTicketModalLabel">
+            Create ticket
+          </h1>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <form class="g-3 needs-validation" id="createNewTicketForm">
+            <div class="form-group">
+              <label for="email2">Title</label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Enter Title"
+                max="255"
+                min="1"
+                name="title"
+                id="title"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="comment">Description</label>
+              <textarea
+                class="form-control"
+                id="description"
+                name="description"
+                rows="5"
+              ></textarea>
+            </div>
+            <div class="form-group">
+              <label>Subject</label><br />
+              <div class="d-flex">
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="subject"
+                    id="SubjectOrder"
+                    value="ORDER_ISSUE"
+                    checked
+                  />
+                  <label class="form-check-label" for="SubjectOrder">
+                    Order Issue
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="subject"
+                    value="SERVICE_ISSUE"
+                    id="ServiceOrder"
+                  />
+                  <label class="form-check-label" for="ServiceOrder">
+                    Service Issue
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="form-group d-none">
+              <label for="exampleFormControlSelect1">Status</label>
+              <select
+                class="form-select"
+                name="status"
+                id="exampleFormControlSelect1"
+              >
+                <option value="NEW">New</option>
+                <option value="WAITING_ON_CONTACT">Waiting On Contact</option>
+                <option value="IN_PROGRESS">In Progress</option>
+                <option value="CLOSED">Closed</option>
+                <option value="SOLVED">Solved</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlSelect1">Priority</label>
+              <select class="form-select" name="priority" id="Priority">
+                <option value="LOW">Low</option>
+                <option value="MEDIUM">Medium</option>
+                <option value="HIGH">High</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="orderIdSelect">Order Id</label>
+              <select class="form-control" id="orderIdSelect" name="order_id">
+                {% for order in orders %}
+                <option value="{{ order.order_id }}">
+                  {{ order.order_id }}
+                </option>
+                {% endfor %}
+              </select>
+            </div>
+            <hr />
+            <div class="d-flex justify-content-between">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button
+                type="submit"
+                class="btn btn-primary"
+                id="createNewTicketBtn"
+              >
+                Save
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="modal fade model-lg"
+    id="updateTicketModal"
+    tabindex="-1"
+    aria-labelledby="updateTicketModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="updateTicketModalLabel">
+            Update ticket
+          </h1>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <form class="g-3 needs-validation" id="updateTicketForm">
+            <div class="form-group">
+              <input type="hidden" name="ticket_id" />
+              <label for="email2">Title</label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Enter Title"
+                max="255"
+                min="1"
+                name="title"
+                id="title"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="comment">Description</label>
+              <textarea
+                class="form-control"
+                id="description"
+                name="description"
+                rows="5"
+              ></textarea>
+            </div>
+            <div class="form-group">
+              <label>Subject</label><br />
+              <div class="d-flex">
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="subject"
+                    id="SubjectOrder"
+                    value="ORDER_ISSUE"
+                  />
+                  <label class="form-check-label" for="SubjectOrder">
+                    Order Issue
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="subject"
+                    value="SERVICE_ISSUE"
+                    id="ServiceOrder"
+                  />
+                  <label class="form-check-label" for="ServiceOrder">
+                    Service Issue
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlSelect1">Status</label>
+              <select
+                class="form-select"
+                name="status"
+                id="exampleFormControlSelect1"
+              >
+                <option value="NEW">New</option>
+                <option value="WAITING_ON_CONTACT">Waiting On Contact</option>
+                <option value="IN_PROGRESS">In Progress</option>
+                <option value="CLOSED">Closed</option>
+                <option value="SOLVED">Solved</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlSelect1">Priority</label>
+              <select class="form-select" name="priority" id="Priority">
+                <option value="LOW">Low</option>
+                <option value="MEDIUM">Medium</option>
+                <option value="HIGH">High</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="orderIdSelect">Order Id</label>
+              <select class="form-control" id="orderIdSelect" name="order_id">
+                {% for order in orders %}
+                <option value="{{ order.id }}">{{ order.order_id }}</option>
+                {% endfor %}
+              </select>
+            </div>
+            <hr />
+            <div class="d-flex justify-content-between">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button
+                type="submit"
+                class="btn btn-primary"
+                id="updateTicketBtn"
+              >
+                Save
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,452 @@
+{% extends 'admin_base.html' %} {% block content %} {% load humanize %}
+<style type="text/css">
+  .ck-editor__editable_inline {
+    min-height: 500px; /* Đặt chiều cao cho CKEditor */
+  }
+</style>
+<div class="container-fluid">
+  <div class="card">
+    <div class="card-header">
+      <h4 class="card-title">
+        Campaign: {{campaign_data.campaign.name}}
+        ({{campaign_data.campaign.start_date|date:"d/m/Y"}} -
+        {{campaign_data.campaign.end_date|date:"d/m/Y"}})
+        <span class="badge bg-info text-dark"
+          >{{campaign_data.campaign.status}}</span
+        >
+      </h4>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-sm-6 col-md-4">
+          <div class="card card-stats card-primary card-round">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-5">
+                  <div class="icon-big text-center">
+                    <i class="fas fa-envelope-open"></i>
+                  </div>
+                </div>
+                <div class="col-7 col-stats">
+                  <div class="numbers">
+                    <p class="card-category">OPEN RATE</p>
+                    <h4 class="card-title">
+                      {{campaign_data.open_rate|default:"0"}}%
+                    </h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+          <div class="card card-stats card-success card-round">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-5">
+                  <div class="icon-big text-center">
+                    <i class="fas fa-external-link-alt"></i>
+                  </div>
+                </div>
+                <div class="col-7 col-stats">
+                  <div class="numbers">
+                    <p class="card-category">CRT</p>
+                    <h4 class="card-title">
+                      {{campaign_data.crt|default:"0"}}%
+                    </h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+          <div class="card card-stats card-danger card-round">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-5">
+                  <div class="icon-big text-center">
+                    <i class="fas fa-bell-slash"></i>
+                  </div>
+                </div>
+                <div class="col-7 col-stats">
+                  <div class="numbers">
+                    <p class="card-category">UN-SUBSCRIBE</p>
+                    <h4 class="card-title">
+                      {{campaign_data.unsubscribe_rate|default:"0"}}%
+                    </h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h3>List email:</h3>
+      <div class="d-flex justify-content-end mb-2">
+        <div class="d-flex justify-content-between gap-3">
+          <button
+            class="btn btn-sm btn-primary btn-block"
+            data-bs-toggle="modal"
+            data-bs-target="#addNewEmailsModal"
+          >
+            <i class="fas fa-plus-circle"></i>
+            Add new emails
+          </button>
+          <button
+            id="send-email-btn"
+            class="btn btn-sm btn-success btn-block ml-4 send-email-btn"
+            onclick="sendCampaignEmails({{campaign_data.campaign.campaign_id}})"
+          >
+            <i class="fas fa-envelope"></i>
+            Send mail
+          </button>
+        </div>
+      </div>
+      <div class="table-responsive">
+        <table
+          id="basic-datatables"
+          class="display table table-sm table-bordered"
+        >
+          <thead>
+            <tr>
+              <th>NAME</th>
+              <th>EMAIL</th>
+              <th>PHONE NUMBER</th>
+              <th>ADDRESS</th>
+              <th>STATUS</th>
+              <th>ACTION</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for mail in mail_tracks %}
+            <tr>
+              <td>
+                {{mail.contact.user.first_name|default:""}}
+                {{mail.contact.user.last_name|default:""}}
+              </td>
+              <td>{{mail.contact.user.email}}</td>
+              <td>{{mail.contact.user.phone_number|default:"-"}}</td>
+              <td>{{mail.contact.user.address|default:"-"}}</td>
+              <td>
+                {% if mail.is_send %}
+                <span class="badge bg-primary"> Sent. </span>
+                {% else %}
+                <span class="badge bg-primary"> Unsent. </span>
+                {% endif %} {% if mail.is_open %}
+                <span class="badge bg-info"> Opened. </span>
+                {% else %}
+                <span class="badge bg-info"> Unopened. </span>
+                {% endif %} {% if mail.is_click %}
+                <span class="badge bg-dark"> Clicked. </span>
+                {% else %}
+                <span class="badge bg-dark"> Unclicked. </span>
+                {% endif %}
+              </td>
+              <td>
+                <button
+                  id="send-email-to-{{mail.track_id}}-btn"
+                  class="btn btn-sm btn-info send-email-btn"
+                  onclick="sendCampaignEmails({{campaign_data.campaign.campaign_id}}, '{{mail.contact.user.email}}', '{{mail.track_id}}')"
+                >
+                  <i class="fas fa-envelope"></i>
+                  Send email
+                </button>
+                <button
+                  class="btn btn-sm btn-danger"
+                  onclick="deleteMailTrack({{mail.track_id}})"
+                >
+                  Delete
+                </button>
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      <hr />
+      <div class="mt-3">
+        <h2 class="text-primary">
+          <i class="fas fa-envelope"></i> Email Subject and Content
+        </h2>
+        <form
+          method="POST"
+          action="{% url 'update_campaign_email' campaign_id=campaign_data.campaign.campaign_id %}"
+        >
+          {% csrf_token %}
+          <div class="mb-3">
+            <label for="mail_subject" class="form-label">Email Subject</label>
+            <input type="text" class="form-control" id="email_subject"
+            name="mail_subject"
+            value="{{campaign_data.campaign.mail_subject|default:"" }}" required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="mail_content" class="form-label">Email Content</label>
+            <textarea
+              class="form-control"
+              id="mail_content"
+              name="mail_content"
+              rows="10"
+            >
+{{ campaign_data.campaign.mail_content|default:"" }}</textarea
+            >
+          </div>
+          <button type="submit" class="btn btn-primary">Update</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="modal fade model-lg"
+    id="createNewCampaignModal"
+    tabindex="-1"
+    aria-labelledby="createNewCampaignModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="createNewCampaignModalLabel">
+            Create new campaign
+          </h1>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <form class="g-3 needs-validation" id="createNewCampaignForm">
+            <div class="form-group">
+              <label for="email2">Name</label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Enter Title"
+                max="255"
+                min="1"
+                name="name"
+                id="name"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="comment">Start Date</label>
+              <input
+                class="form-control"
+                type="date"
+                format="dd/mm/YYYY"
+                name="start_date"
+                id="start_date"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="comment">End Date</label>
+              <input
+                class="form-control"
+                type="date"
+                name="end_date"
+                id="end_date"
+                required
+              />
+            </div>
+            <hr />
+            <div class="d-flex justify-content-between">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button
+                type="submit"
+                class="btn btn-primary"
+                id="createNewCampaignBtn"
+              >
+                Save
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    ClassicEditor.create(document.querySelector("#mail_content"), {
+      editorConfig: {},
+    }).catch((error) => {
+      console.error("ck eror", error);
+    });
+  </script>
+
+  <div
+    class="modal fade model-lg"
+    id="editCampaignModal"
+    tabindex="-1"
+    aria-labelledby="editCampaignModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="editCampaignModalLabel">
+            Edit campaign
+          </h1>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <form class="g-3 needs-validation" id="editCampaignForm">
+            <input
+              type="hidden"
+              class="form-control"
+              name="campaign_id"
+              id="campaign_id"
+            />
+            <div class="form-group">
+              <label for="email2">Name</label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Enter Title"
+                max="255"
+                min="1"
+                name="name"
+                id="name"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="comment">Start Date</label>
+              <input
+                class="form-control"
+                type="date"
+                format="dd/mm/YYYY"
+                name="start_date"
+                id="start_date"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="comment">End Date</label>
+              <input
+                class="form-control"
+                type="date"
+                name="end_date"
+                id="end_date"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="comment">Status</label>
+              <select class="form-select" id="statusSelect" name="status">
+                {% for value, label in status_choices %}
+                <option value="{{ value }}">{{ label }}</option>
+                {% endfor %}
+              </select>
+            </div>
+            <hr />
+            <div class="d-flex justify-content-between">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button
+                type="submit"
+                class="btn btn-primary"
+                id="editCampaignBtn"
+              >
+                Save
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="modal fade model-lg"
+    id="addNewEmailsModal"
+    tabindex="-1"
+    aria-labelledby="addNewEmailsModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="addNewEmailsModalLabel">
+            Add new emails
+          </h1>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <form class="g-3 needs-validation" id="addNewEmailsForm">
+            <input
+              type="hidden"
+              class="form-control"
+              name="campaign_id"
+              id="campaign_id"
+              value="{{campaign_data.campaign.campaign_id}}"
+            />
+            <ul class="list-group list-group-flush">
+              {% for contact in untracked_contacts %}
+              <li class="list-group-item">
+                <input
+                  type="checkbox"
+                  name="emails"
+                  class="form-check-input"
+                  style="margin-right: 4px"
+                  value="{{contact.user.email}}"
+                  id="{{contact.user.email}}"
+                />
+                <label for="{{contact.user.email}}"
+                  >{{contact.user.email}}
+                  ({{contact.user.first_name|default:""}}
+                  {{contact.user.last_name|default:""}})
+                </label>
+              </li>
+              {% endfor %}
+            </ul>
+            <hr />
+            <div class="d-flex justify-content-between">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button
+                type="submit"
+                class="btn btn-primary"
+                id="editCampaignBtn"
+              >
+                Add
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

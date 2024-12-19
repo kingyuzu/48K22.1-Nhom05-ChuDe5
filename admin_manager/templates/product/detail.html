@@ -1,0 +1,187 @@
+{% extends 'admin_base.html' %} {% block content %} {% load static %}
+<div class="container-fluid">
+  <div class="card">
+    <div class="card-header">
+      <h4 class="card-title d-flex justify-content-between">Product Detail</h4>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col"></div>
+        <div class="col">
+          <form action="/save-product">
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label"
+                >Name</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="exampleInputEmail1"
+                aria-describedby="emailHelp"
+                value="{{ product.product_name }}"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label"
+                >Quantity</label
+              >
+              <input
+                type="number"
+                min="0"
+                class="form-control"
+                id="exampleInputPassword1"
+                value="{{ product.quantity }}"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label"
+                >Price</label
+              >
+              <input
+                type="number"
+                class="form-control"
+                id="exampleInputPassword1"
+                value="{{ product.unit_price }}"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label"
+                >Unit</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="exampleInputPassword1"
+                value="{{ product.unit }}"
+                required
+              />
+            </div>
+            <button type="submit" class="btn btn-primary">Save</button>
+          </form>
+        </div>
+        <div class="col"></div>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="modal fade model-lg"
+    id="updateContactModal"
+    tabindex="-1"
+    aria-labelledby="updateContactModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="updateContactModalLabel">
+            Update Contact Information
+          </h1>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <form class="g-3 needs-validation" id="updateContactForm">
+            <input type="hidden" name="contact_id" id="contact_id" />
+            <div class="form-group">
+              <label for="first_name">First name</label>
+              <input
+                type="text"
+                class="form-control"
+                max="255"
+                min="1"
+                name="first_name"
+                id="first_name"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="last_name">Last name</label>
+              <input
+                type="text"
+                class="form-control"
+                max="255"
+                min="1"
+                name="last_name"
+                id="last_name"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                class="form-control"
+                max="255"
+                min="1"
+                name="email"
+                id="email"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="phone_number">Phone number</label>
+              <input
+                type="text"
+                class="form-control"
+                max="255"
+                min="1"
+                name="phone_number"
+                id="phone_number"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="lifecycle_stage">Lifecycle Stage</label>
+              <select
+                class="form-select"
+                name="lifecycle_stage"
+                id="lifecycle_stage"
+              >
+                <option value="SUBSCRIBER">Subscriber</option>
+                <option value="LEAD">Lead</option>
+                <option value="OPPORTUNITY">Opportunity</option>
+                <option value="EVANGELIST">Evangelist</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="address">Address</label>
+              <input
+                class="form-control"
+                type="text"
+                name="address"
+                id="address"
+                required
+              />
+            </div>
+            <hr />
+            <div class="d-flex justify-content-between">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button
+                type="submit"
+                class="btn btn-primary"
+                id="updateContactBtn"
+              >
+                Update
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

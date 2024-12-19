@@ -1,0 +1,124 @@
+.btn {
+  color: white !important;
+}
+.ticket-tag {
+  width: 250px;
+  border: 2px solid #ccc;
+  padding: 10px;
+  margin-top: 5px;
+  background-color: white;
+}
+
+.ticket-tag:hover {
+  border-color: navy;
+}
+
+.ticket-tag-title {
+  font-weight: bold;
+}
+
+.ticket-tag-priority-status {
+  width: 100%;
+  height: 20px;
+}
+.ticket-tag-priority-status-color {
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  background-color: green;
+  margin: 6px;
+  float: right;
+  border: 1px solid #ccc
+}
+.ticket-tag-priority-status-color-LOW {
+  background-color: green !important;
+}
+.ticket-tag-priority-status-color-MEDIUM {
+  background-color: yellow !important;
+}
+.ticket-tag-priority-status-color-HIGH {
+  background-color: red !important;
+}
+.ticket-tag-priority-status-text {
+  font-size: small;
+  text-align: right;
+  float: right;
+}
+
+#ticket-datatables td {
+  vertical-align: top !important;
+}
+
+.edit-ticket-btn {
+  cursor: pointer;
+}
+
+.edit-ticket-btn:hover {
+  color: black;
+}
+
+
+/* steps */
+.step-bar {
+  display: flex;
+  align-items: center;
+  width: 80%;
+  max-width: 800px;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  position: relative;
+}
+
+.step .circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #d3d3d3; /* Default gray color */
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.step.active .circle {
+  background-color: #28a745; /* Green for completed steps */
+}
+
+.step.step.active-danger .circle {
+  background-color: red; /* Green for completed steps */
+}
+
+.step .label {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #333;
+}
+
+.step .line {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 4px;
+  width: 100%;
+  background-color: #d3d3d3; /* Default gray color */
+  z-index: -1;
+  transform: translateX(-50%);
+}
+
+.step.active .line {
+  background-color: #28a745; /* Green for completed steps */
+}
+.step.active-danger .line {
+  background-color: red !important; /* Green for completed steps */
+}
+
+.step:first-child .line {
+  display: none;
+}

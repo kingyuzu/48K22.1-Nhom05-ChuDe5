@@ -1,0 +1,49 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container">
+  <h2 class="my-4">Create New Ticket</h2>
+  {% if form.errors %}
+  <div class="alert alert-danger">
+    <strong>There were errors with your submission:</strong>
+    <ul>
+      {% for field in form %} {% if field.errors %}
+      <li>{{ field.label }}: {{ field.errors }}</li>
+      {% endif %} {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+  <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <label for="id_Title" class="form-label">Ticket Title</label>
+        {{ form.title }}
+      </div>
+
+      <div class="col-md-6 mb-3">
+        <label for="id_Subject" class="form-label">Subject</label>
+        {{ form.subject }}
+      </div>
+
+      <div class="col-md-6 mb-3">
+        <label for="id_Priority" class="form-label">Priority</label>
+        {{ form.priority }}
+      </div>
+
+      <div class="col-md-12 mb-3">
+        <label for="id_Description" class="form-label">Description</label>
+        {{ form.description }}
+      </div>
+
+      <div class="col-md-12 mb-3">
+        <label for="id_OrderID" class="form-label">Order ID</label>
+        {{ form.order }}
+      </div>
+
+      {{ form.status }}
+      <div class="col-md-12">
+        <button type="submit" class="btn btn-primary">Create Ticket</button>
+      </div>
+    </div>
+  </form>
+</div>
+{% endblock %}

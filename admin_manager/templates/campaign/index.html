@@ -1,0 +1,245 @@
+{% extends 'admin_base.html' %} {% block content %}
+
+<div class="container-fluid">
+  <div class="card">
+    <div class="card-header">
+      <h4 class="card-title d-flex justify-content-between">
+        Campaign list
+        <div class="d-flex">
+          <div class="input-icon input-sm" style="margin-right: 10px"></div>
+          <button
+            class="btn btn-info btn-sm"
+            data-bs-toggle="modal"
+            data-bs-target="#createNewCampaignModal"
+          >
+            <i class="fas fa-plus-circle"></i>
+            Create
+          </button>
+        </div>
+      </h4>
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table id="basic-datatables" class="display table table-bordered">
+          <thead>
+            <tr>
+              <th>NAME</th>
+              <th>START DATE</th>
+              <th>END DATE</th>
+              <th>STATUS</th>
+              <th>CRT (%)</th>
+              <th>OPEN RATE (%)</th>
+              <th>UN-SUBSCRIBE</th>
+              <th>ACTION</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for campaign in campaign_list %}
+            <tr>
+              <td>{{campaign.campaign_data.name}}</td>
+              <td>{{campaign.campaign_data.start_date|date:"d/m/Y"}}</td>
+              <td>{{campaign.campaign_data.end_date|date:"d/m/Y"}}</td>
+              <td>{{campaign.campaign_data.status}}</td>
+              <td>{{campaign.crt|default:"0"}}%</td>
+              <td>{{campaign.open_rate|default:"0"}}%</td>
+              <td>{{campaign.unsubscribe_rate|default:"0"}}%</td>
+              <td>
+                <a
+                  href="/system-admin/campaign-detail/{{campaign.campaign_data.campaign_id}}"
+                >
+                  <button class="btn btn-sm btn-primary">Detail</button>
+                </a>
+                <button
+                  class="btn btn-sm btn-info"
+                  onclick="showEditCampaignModel({{campaign.campaign_data.campaign_id}})"
+                >
+                  Edit
+                </button>
+                <button
+                  class="btn btn-sm btn-danger"
+                  onclick="deleteCampaign({{campaign.campaign_data.campaign_id}})"
+                >
+                  Delete
+                </button>
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="modal fade model-lg"
+    id="createNewCampaignModal"
+    tabindex="-1"
+    aria-labelledby="createNewCampaignModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="createNewCampaignModalLabel">
+            Create new campaign
+          </h1>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <form class="g-3 needs-validation" id="createNewCampaignForm">
+            <div class="form-group">
+              <label for="email2">Name</label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Enter Title"
+                max="255"
+                min="1"
+                name="name"
+                id="name"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="comment">Start Date</label>
+              <input
+                class="form-control"
+                type="date"
+                format="dd/mm/YYYY"
+                name="start_date"
+                id="start_date"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="comment">End Date</label>
+              <input
+                class="form-control"
+                type="date"
+                name="end_date"
+                id="end_date"
+                required
+              />
+            </div>
+            <hr />
+            <div class="d-flex justify-content-between">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button
+                type="submit"
+                class="btn btn-primary"
+                id="createNewCampaignBtn"
+              >
+                Save
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="modal fade model-lg"
+    id="editCampaignModal"
+    tabindex="-1"
+    aria-labelledby="editCampaignModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="editCampaignModalLabel">
+            Edit campaign
+          </h1>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <form class="g-3 needs-validation" id="editCampaignForm">
+            <input
+              type="hidden"
+              class="form-control"
+              name="campaign_id"
+              id="campaign_id"
+            />
+            <div class="form-group">
+              <label for="email2">Name</label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Enter Title"
+                max="255"
+                min="1"
+                name="name"
+                id="name"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="comment">Start Date</label>
+              <input
+                class="form-control"
+                type="date"
+                format="dd/mm/YYYY"
+                name="start_date"
+                id="start_date"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="comment">End Date</label>
+              <input
+                class="form-control"
+                type="date"
+                name="end_date"
+                id="end_date"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="comment">Status</label>
+              <select class="form-select" id="statusSelect" name="status">
+                {% for value, label in status_choices %}
+                <option value="{{ value }}">{{ label }}</option>
+                {% endfor %}
+              </select>
+            </div>
+            <hr />
+            <div class="d-flex justify-content-between">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button
+                type="submit"
+                class="btn btn-primary"
+                id="editCampaignBtn"
+              >
+                Save
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

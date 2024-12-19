@@ -1,0 +1,101 @@
+{% extends 'admin_base.html' %} {% block content %} {% load static %}
+<div class="container-fluid">
+  <div class="card">
+    <div class="card-header">
+      <h4 class="card-title">
+        Order Detail:
+        <span class="text-primary">#{{ order.order_id }}</span>
+      </h4>
+    </div>
+    <div class="card-body">
+      <div class="container mt-5">
+        <!-- Order Header -->
+        <div class="step-bar">
+          <div class="step {% if current_status_num >= 0 %}active{% endif %}">
+            <div class="circle">1</div>
+            <div class="label">NEW</div>
+            <div class="line"></div>
+          </div>
+          <div
+            class="step {% if current_status_num >= 1 %}active{% endif %}">
+            <div class="circle">2</div>
+            <div class="label">CONFIRMED</div>
+            <div class="line"></div>
+          </div>
+          <div
+            class="step {% if current_status_num >= 2 %}active{% endif %}">
+            <div class="circle">3</div>
+            <div class="label">IN_PROGRESS</div>
+            <div class="line"></div>
+          </div>
+          <div
+            class="step {% if current_status_num >= 3 %}active{% endif %}">
+            <div class="circle">4</div>
+            <div class="label">DELIVERED</div>
+            <div class="line"></div>
+          </div>
+          <div
+            class="step {% if current_status_num >= 4 %}active-danger{% endif %}">
+            <div class="circle">5</div>
+            <div class="label">RETURNED</div>
+          </div>
+        </div>
+        <div class="card mb-4">
+          <div class="card-body">
+            <h4 class="card-title">Order Details - {{ order.order_id }}</h4>
+            <p>
+              <strong>Contact Name:</strong>
+              {{order.contact_name.user.first_name|default:""}}
+              {{order.contact_name.user.last_name|default:""}}
+            </p>
+            <p>
+              <strong>Create Date:</strong> {{ order.created_date|date:"Y-m-d H:i:s" }}
+            </p>
+            <p><strong>Status:</strong> {{ order.get_status_display }}</p>
+            <p><strong>Total Products:</strong> {{ total_products }}</p>
+            <p><strong>Total Price:</strong> {{ order.total_price }} VND</p>
+          </div>
+        </div>
+
+        <!-- Order Items Table -->
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Order Items</h5>
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Image</th>
+                  <th>Product Name</th>
+                  <th>Quantity</th>
+                  <th>Unit Price (VND)</th>
+                  <th>Subtotal (VND)</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for detail in order_details %}
+                <tr>
+                  <td>{{ forloop.counter }}</td>
+                  <td>
+                    <img
+                      src="{% static 'img/food.png' %}"
+                      alt="..."
+                      style="width: 50px"
+                      class="avatar-img rounded-circle"
+                    />
+                  </td>
+                  <td>{{ detail.product.product_name }}</td>
+                  <td>{{ detail.quantity }}</td>
+                  <td>{{ detail.product.unit_price }}</td>
+                  <td>{{ detail.subtotal }}</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
